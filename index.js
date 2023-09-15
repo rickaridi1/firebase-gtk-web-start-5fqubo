@@ -63,12 +63,13 @@ async function main() {
 
   const ui = new firebaseui.auth.AuthUI(auth);
   // Listen to RSVP button clicks
-  /*startRsvpButton.addEventListener("click",
-   () => {
-        ui.start("#firebaseui-auth-container", uiConfig);
-  });*/
-
+  /*
+  startRsvpButton.addEventListener('click', () => {
+    ui.start('#firebaseui-auth-container', uiConfig);
+  });
+  */
   // Called when the user clicks the RSVP button
+
   startRsvpButton.addEventListener('click', () => {
     if (auth.currentUser) {
       // User is signed in; allows user to sign out
@@ -78,6 +79,7 @@ async function main() {
       ui.start('#firebaseui-auth-container', uiConfig);
     }
   });
+
   // Listen to the current Auth state
   onAuthStateChanged(auth, (user) => {
     if (user) {
